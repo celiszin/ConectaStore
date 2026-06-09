@@ -102,6 +102,17 @@ public class ProdutosController : ControllerBase
         return NoContent();
     }
 
+    [HttpDelete("{id}")]
+    public IActionResult DeleteProduto(int id)
+    {
+        var produto = _context.Produtos.Find(id);
+        if(produto == null) return NotFound("Produto nao localizado");
+
+        _context.Produtos.Remove(produto);
+        _context.SaveChanges();
+        return NoContent();
+    }
+
     private bool CategoriaExistente(int id)
     {
         return _context.Categorias.Any(c => c.Id == id);
