@@ -1,2 +1,2 @@
 # ConectaStore
-Projeto mvc do incrivel gallo.
+Projeto de aplicação web .Net 9, padrão API
